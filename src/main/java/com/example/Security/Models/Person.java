@@ -2,6 +2,8 @@ package com.example.Security.Models;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Person")
@@ -12,9 +14,13 @@ public class Person {
     private int id;
 
     @Column(name = "username")
+    @NotNull
+    @NotEmpty
     private String username;
 
     @Column(name = "password")
+    @NotNull
+    @NotEmpty
     private String password;
 
     public Person() {
