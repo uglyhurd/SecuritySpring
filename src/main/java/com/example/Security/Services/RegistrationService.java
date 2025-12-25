@@ -24,6 +24,9 @@ public class RegistrationService {
         String encodedPassword = passwordEncoder.encode(person.getPassword());
         person.setPassword(encodedPassword);
 
+
+        person.setRole("ROLE_USER");
+
         personRepositories.save(person);
     }
 

@@ -40,14 +40,13 @@ public class AuthController {
     public String performRegistration(@ModelAttribute("person") @Valid Person person,
                                       BindingResult bindingResult){
 
-        personValidator.validate(person, bindingResult);
-
         if(bindingResult.hasErrors()){
+
             return "/auth/registration";
         }
+        personValidator.validate(person, bindingResult);
 
         registrationService.register(person);
-
         return "redirect:/auth/login";
     }
 

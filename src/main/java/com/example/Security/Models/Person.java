@@ -4,6 +4,7 @@ package com.example.Security.Models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.context.annotation.Role;
 
 @Entity
 @Table(name = "Person")
@@ -22,6 +23,17 @@ public class Person {
     @NotNull
     @NotEmpty
     private String password;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole( String role) {
+        this.role = role;
+    }
+
+    @Column(name = "role")
+    private String role;
 
     public Person() {
 
