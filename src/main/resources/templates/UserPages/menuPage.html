@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<header style="background: #cecdcd; margin: 0px; padding: 0px;font-family: Calibri, serif">
+    <div style="position: relative;">
+
+        <div style="text-align: center; padding-top: 5px;">
+            <a href="#"><h1>Menu</h1></a>
+        </div>
+        <div style=" font-size: 30px;  top: 40%; position: absolute;left: 2% ">
+            <a href="#">About me</a>
+        </div>
+
+        <div sec:authorize="hasRole('ROLE_ADMIN')" style="text-align: right; padding-right: 50px;top: 50%;
+        position: absolute; right: 0%;font-size: 30px;">
+            <a th:href="@{/adminMenu}">Admin</a>
+        </div>
+
+    </div>
+    <hr>
+</header>
+<body style="background: #e8e7e7;margin: 0px; padding: 0px; font-family: Calibri, serif">
+
+
+
+</body>
+</html>
